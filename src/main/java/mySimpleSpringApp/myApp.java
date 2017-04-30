@@ -12,13 +12,8 @@ public class myApp {
 		
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 		
-		// fruit bean that sets the description within the xml file
-		Fruit fruit = appContext.getBean("fruit", Fruit.class);
-		System.out.println("Spring meal: " + fruit.talkAboutYourself() );
-		
-		// fruitToSetWithAnnotation bean that sets the description value using annotation
-		Fruit fruitAnnotation = appContext.getBean("fruitToSetWithAnnotation", Fruit.class);
-		System.out.println("Spring meal: " + fruitAnnotation.talkAboutYourself() );
+		Meal myAnnotatedSpringMeal = appContext.getBean("mealByAnnotation", Meal.class);
+		System.out.println("Spring meal: " + myAnnotatedSpringMeal.whatsInThisMeal() );
 		
 		((FileSystemXmlApplicationContext)appContext).close();
 		

@@ -7,16 +7,12 @@
 
      <context:annotation-config/>
    
-   
-   <!-- We would use both beans "fruit" and "fruitToSetWithAnnotation" to show how using value annotation:-->
-     <bean id="fruit" class="food.Fruit">
-       <property name="description" value="Hi I am fruit. My description was set in bean config file" />
-     </bean>
-          
-     <bean id="fruitToSetWithAnnotation" class="food.Fruit"/>
-     
-     
-     
+         
+<!--      <bean id="fruit" class="food.Fruit"/> 
+           We comment this line to notice that the compiler will not complain even there is no bean 
+           of type of "Fruit.class" because @Auowired on the reference variable "fruit" in Meal.class 
+           has the property (required=false) -->
+           
      <bean id="vegetable" class="food.Vegetable"></bean>
      <bean id="dairy" class="food.Dairy"></bean>
      <bean id="meat" class="food.Meat"></bean>

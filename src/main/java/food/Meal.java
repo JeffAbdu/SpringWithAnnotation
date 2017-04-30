@@ -12,61 +12,53 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Meal {
 	
+	@Autowired(required=false)     // In case the is no bean of the type "Fruit" within config xml file, then Spring will ignore it and avoid error message.   
 	private Fruit fruit;
-	private Dairy dairy;
-	private Grain grain;
-	private Meat meat;
-	private Vegetable veg;
-	
-	public Meal() {}
-
-	// For Autowiring Constructor, we need Constructor using arguments with @Autowired annotation:  
 	@Autowired
-	public Meal(Fruit fruit, Dairy dairy, Grain grain, Meat meat, Vegetable veg) {
-		super();
-		this.fruit = fruit;
-		this.dairy = dairy;
-		this.grain = grain;
-		this.meat = meat;
-		this.veg = veg;
+	private Dairy dairy;
+	@Autowired
+	private Grain grain;
+	@Autowired
+	private Meat meat;
+	@Autowired
+	private Vegetable veg;
+		
+	
+	public Fruit getFruit() {
+		return fruit;
 	}
 	
+	public void setFruit(Fruit fruit) {
+		this.fruit = fruit;
+	}
+	public Dairy getDairy() {
+		return dairy;
+	}
 	
-//	public Fruit getFruit() {
-//		return fruit;
-//	}
-//	@Autowired
-//	public void setFruit(Fruit fruit) {
-//		this.fruit = fruit;
-//	}
-//	public Dairy getDairy() {
-//		return dairy;
-//	}
-//	@Autowired
-//	public void setDairy(Dairy dairy) {
-//		this.dairy = dairy;
-//	}
-//	public Grain getGrain() {
-//		return grain;
-//	}
-//	@Autowired
-//	public void setGrain(Grain grain) {
-//		this.grain = grain;
-//	}
-//	public Meat getMeat() {
-//		return meat;
-//	}
-//	@Autowired
-//	public void setMeat(Meat meat) {
-//		this.meat = meat;
-//	}
-//	public Vegetable getVeg() {
-//		return veg;
-//	}
-//	@Autowired
-//	public void setVeg(Vegetable veg) {
-//		this.veg = veg;
-//	}
+	public void setDairy(Dairy dairy) {
+		this.dairy = dairy;
+	}
+	public Grain getGrain() {
+		return grain;
+	}
+	
+	public void setGrain(Grain grain) {
+		this.grain = grain;
+	}
+	public Meat getMeat() {
+		return meat;
+	}
+	
+	public void setMeat(Meat meat) {
+		this.meat = meat;
+	}
+	public Vegetable getVeg() {
+		return veg;
+	}
+	
+	public void setVeg(Vegetable veg) {
+		this.veg = veg;
+	}
 
 
 	public String whatsInThisMeal(){
