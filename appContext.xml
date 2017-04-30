@@ -7,7 +7,16 @@
 
      <context:annotation-config/>
    
-     <bean id="fruit" class="food.Fruit"></bean>
+   
+   <!-- We would use both beans "fruit" and "fruitToSetWithAnnotation" to show how using value annotation:-->
+     <bean id="fruit" class="food.Fruit">
+       <property name="description" value="Hi I am fruit. My description was set in bean config file" />
+     </bean>
+          
+     <bean id="fruitToSetWithAnnotation" class="food.Fruit"/>
+     
+     
+     
      <bean id="vegetable" class="food.Vegetable"></bean>
      <bean id="dairy" class="food.Dairy"></bean>
      <bean id="meat" class="food.Meat"></bean>
