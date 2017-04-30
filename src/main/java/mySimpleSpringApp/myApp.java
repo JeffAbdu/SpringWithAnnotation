@@ -14,7 +14,7 @@ public class myApp {
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 		
 		Fruit fruitDescriptionRequired = appContext.getBean("fruit", Fruit.class);
-		System.out.println("Spring meal: " + fruitDescriptionRequired.talkAboutYourself() );
+		System.out.println("talkAboutYourself: " + fruitDescriptionRequired.talkAboutYourself() );
 		
 		((FileSystemXmlApplicationContext)appContext).close();
 		
