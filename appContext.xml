@@ -10,9 +10,7 @@
 
   <!-- Food Package -->
          
-     <bean id="fruit" scope="singleton" class="food.Fruit"
-        init-method="initMethod"
-        destroy-method="destroyMethod">
+     <bean id="fruit" scope="singleton" class="food.Fruit">
         <property name="description" value="I am a fruit"/>
      </bean> 
 

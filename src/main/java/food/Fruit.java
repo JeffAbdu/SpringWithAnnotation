@@ -1,6 +1,6 @@
 package food;
 
-import org.springframework.beans.factory.annotation.Required;
+import javax.annotation.*;
 
 
 public class Fruit {
@@ -18,13 +18,15 @@ public class Fruit {
 	}
 	
 	public String talkAboutYourself(){
-		return description;
+		return description;	
 	}
 	
+	@PostConstruct
 	public void initMethod(){
 		System.out.println("The fruit bean is ready to go." + this.description);
 	}
 	
+	@PreDestroy
 	public void destroyMethod(){
 		System.out.println("The fruit bean is about to be destroyed.");
 	}
