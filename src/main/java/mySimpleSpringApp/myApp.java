@@ -3,6 +3,7 @@ package mySimpleSpringApp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import car.FamilyCar;
 import food.Fruit;
 import food.Meal;
 
@@ -12,8 +13,8 @@ public class myApp {
 		
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 		
-		Meal myAnnotatedSpringMeal = appContext.getBean("mealByAnnotation", Meal.class);
-		System.out.println("Spring meal: " + myAnnotatedSpringMeal.whatsInThisMeal() );
+		FamilyCar myFamilyCar = appContext.getBean("familyCar", FamilyCar.class);
+		System.out.println("Spring meal: " + myFamilyCar.getCarDescription() );
 		
 		((FileSystemXmlApplicationContext)appContext).close();
 		
