@@ -7,11 +7,13 @@
 
      <context:annotation-config/>
    
+
+  <!-- Food Package -->
          
-<!--      <bean id="fruit" class="food.Fruit"/> 
-           We comment this line to notice that the compiler will not complain even there is no bean 
-           of type of "Fruit.class" because @Auowired on the reference variable "fruit" in Meal.class 
-           has the property (required=false) -->
+     <bean id="fruit" class="food.Fruit">
+        <property name="description" value="I am a fruit"></property>
+     </bean> 
+
            
      <bean id="vegetable" class="food.Vegetable"></bean>
      <bean id="dairy" class="food.Dairy"></bean>
@@ -19,11 +21,8 @@
      <bean id="grain" class="food.Grain"></bean>
      
      <bean id="mealByAnnotation" class="food.Meal"></bean>
-     
-         <!-- byName example:   [in case we don't want @autowiring annotation witin the food.Meal.java] 
-         <bean id="mealByAnnotation" class="food.Meal" autowire="byName"></bean>
-         -->
 
+  <!-- Car Package -->
 
 <bean id="smallTire" class="car.SmallTire" >
   <qualifier value="sTire"/>

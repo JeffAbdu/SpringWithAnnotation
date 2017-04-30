@@ -13,8 +13,8 @@ public class myApp {
 		
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 		
-		FamilyCar myFamilyCar = appContext.getBean("altFamilyCar", FamilyCar.class);
-		System.out.println("Spring meal: " + myFamilyCar.getCarDescription() );
+		Fruit fruitDescriptionRequired = appContext.getBean("fruit", Fruit.class);
+		System.out.println("Spring meal: " + fruitDescriptionRequired.talkAboutYourself() );
 		
 		((FileSystemXmlApplicationContext)appContext).close();
 		
