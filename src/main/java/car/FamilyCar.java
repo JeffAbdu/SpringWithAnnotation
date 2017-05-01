@@ -3,26 +3,23 @@ package car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.annotation.*;
+
 public class FamilyCar {
 
-	@Autowired
-	@Qualifier(value="sTire")
+	@Resource(name="bigTire")
     private Tire frontLeft;
 	
-	@Autowired
-	@Qualifier(value="bTire")
+	@Resource(name="bigTire")
 	private Tire frontRight;
 	
-	@Autowired
-	@Qualifier(value="sTire")
+	@Resource(name="bigTire")
 	private Tire rearLeft;
 	
-	@Autowired
-	@Qualifier(value="bTire")
+	@Resource(name="bigTire")
 	private Tire rearRight;
 	
-	@Autowired
-	@Qualifier(value="fourCyl")
+	@Resource(name="sixCyl")
 	private Engine engineType;
     
 	public Tire getFrontLeft() {

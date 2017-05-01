@@ -24,12 +24,8 @@
 
   <!-- Car Package -->
 
-<bean id="smallTire" class="car.SmallTire" >
-  <qualifier value="sTire"/>
-</bean>
-<bean id="bigTire" class="car.BigTire" >
-  <qualifier value="bTire"/> 
-</bean>
+<bean id="smallTire" class="car.SmallTire"/>
+<bean id="bigTire" class="car.BigTire" />
 <bean id="sixCyl" class="car.SixCylinderEngine" />
 <bean id="fourCyl" class="car.FourCylinderEngine" />
 

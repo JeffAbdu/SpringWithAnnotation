@@ -21,12 +21,12 @@ public class Fruit {
 		return description;	
 	}
 	
-	@PostConstruct
+	//@PostConstruct
 	public void initMethod(){
 		System.out.println("The fruit bean is ready to go." + this.description);
 	}
 	
-	@PreDestroy
+	//@PreDestroy
 	public void destroyMethod(){
 		System.out.println("The fruit bean is about to be destroyed.");
 	}
