@@ -1,25 +1,28 @@
 package car;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
-import javax.annotation.*;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 public class FamilyCar {
 
-	@Resource(name="bigTire")
+	@Inject
+	@Named("smallTire")
     private Tire frontLeft;
 	
-	@Resource(name="bigTire")
+	@Inject
+	@Named("smallTire")
 	private Tire frontRight;
 	
-	@Resource(name="bigTire")
+	@Inject
+	@Named("smallTire")
 	private Tire rearLeft;
 	
-	@Resource(name="bigTire")
+	@Inject
+	@Named("smallTire")
 	private Tire rearRight;
 	
-	@Resource(name="sixCyl")
+	@Inject
+	@Named("fourCyl")
 	private Engine engineType;
     
 	public Tire getFrontLeft() {
