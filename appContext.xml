@@ -24,24 +24,14 @@
 
   <!-- Car Package -->
 
-<bean id="smallTire" class="car.SmallTire"/>
-<bean id="bigTire" class="car.BigTire" />
+
 <bean id="sixCyl" class="car.SixCylinderEngine" />
 <bean id="fourCyl" class="car.FourCylinderEngine" />
-
-
-<!-- 	<bean id="familyCar" class="car.FamilyCar"> -->
-<!-- 		<property name="frontLeft" ref="smallTire" /> -->
-<!-- 		<property name="frontRight" ref="smallTire" /> -->
-<!-- 		<property name="rearLeft" ref="bigTire" /> -->
-<!-- 		<property name="rearRight" ref="bigTire" /> -->
-<!-- 		<property name="engineType" ref="fourCyl" /> -->
-<!-- 	</bean>      -->
      
      
-   <bean id="altFamilyCar" class="car.FamilyCar"/>
+   <bean id="familyCar" class="car.FamilyCar">
+     <property name="engineType" ref="fourCyl"></property>
+   </bean>
        
-   
-     
 </beans>
   
