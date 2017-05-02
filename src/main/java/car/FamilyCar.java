@@ -1,6 +1,10 @@
 package car;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("familyCar")
 public class FamilyCar {
 
     private Tire frontLeft;
@@ -11,6 +15,8 @@ public class FamilyCar {
 
 	private Tire rearRight;
 	
+	@Autowired
+	@Qualifier("sixCyl")
 	private Engine engineType;
     
 	public Tire getFrontLeft() {

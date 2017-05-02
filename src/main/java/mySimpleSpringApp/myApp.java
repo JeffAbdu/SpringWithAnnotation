@@ -14,8 +14,7 @@ public class myApp {
 	public static void main(String[] args) {
 		
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
-		
-		
+				
 		FourCylinderEngine myFour = appContext.getBean("fourCyl", FourCylinderEngine.class);
 		System.out.println("myFour: " + myFour.getNumberOfCylinders());
 		
