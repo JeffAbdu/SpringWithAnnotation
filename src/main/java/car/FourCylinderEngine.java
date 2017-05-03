@@ -1,8 +1,8 @@
 package car;
 
-import org.springframework.stereotype.Component;
+import javax.inject.Named;
 
-@Component("fourCyl")
+@Named("fourCyl")
 public class FourCylinderEngine implements Engine {
 
 	public int getNumberOfCylinders() {
