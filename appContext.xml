@@ -24,18 +24,11 @@
   <!-- Car Package -->
 
  
-     <context:component-scan base-package="car"></context:component-scan>
+     <context:component-scan base-package="car">
+         <context:include-filter type="annotation" expression="Annotations.AnotherRandomDemoAnnotation"/>       
+     </context:component-scan>
      
 
-<!-- <bean id="sixCyl" class="car.SixCylinderEngine" /> -->
-<!-- <bean id="fourCyl" class="car.FourCylinderEngine" /> -->
-     
-     
-<!--    <bean id="familyCar" class="car.FamilyCar"> -->
-<!--      <property name="engineType" ref="fourCyl"></property> -->
-<!--    </bean> -->
-       
-       
        
 </beans>
   

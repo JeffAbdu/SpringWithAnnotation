@@ -3,9 +3,11 @@ package mySimpleSpringApp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import car.BigTire;
 import car.FamilyCar;
 import car.FourCylinderEngine;
 import car.SixCylinderEngine;
+import car.SmallTire;
 import food.Fruit;
 import food.Meal;
 
@@ -15,14 +17,11 @@ public class myApp {
 		
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 				
-		FourCylinderEngine myFour = appContext.getBean("fourCyl", FourCylinderEngine.class);
-		System.out.println("myFour: " + myFour.getNumberOfCylinders());
+		SmallTire mySmallTire = appContext.getBean(SmallTire.class);
+		System.out.println(mySmallTire.getTireDiameter());
 		
-		SixCylinderEngine mySix = appContext.getBean("sixCyl", SixCylinderEngine.class);
-		System.out.println("mySix: " + mySix.getNumberOfCylinders());
-		
-		FamilyCar familyCar = appContext.getBean("familyCar", FamilyCar.class);
-		System.out.println("Family car: " + familyCar.getCarDescription() );
+		BigTire myBigTire = appContext.getBean(BigTire.class);
+		System.out.println(myBigTire.getTireDiameter());
 		
 		((FileSystemXmlApplicationContext)appContext).close();
 		

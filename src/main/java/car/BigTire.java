@@ -1,10 +1,19 @@
 package car;
 
+import Annotations.AnotherRandomDemoAnnotation;
+
+//@Component
+@AnotherRandomDemoAnnotation
 public class BigTire implements Tire {
 
+	private String tireDiameter = "22 inch diameter";
+	
 	public String getTireDiameter() {
-		return "20 inch diameter";
+		return tireDiameter;
 	}
 	
+	public String roll(){
+		return null;
+	}
 	
 }
