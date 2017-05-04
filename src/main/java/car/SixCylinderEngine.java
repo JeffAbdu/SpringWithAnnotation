@@ -1,9 +1,5 @@
 package car;
 
-import javax.inject.Named;
-
-
-@Named("sixCyl")
 public class SixCylinderEngine implements Engine {
 
 	public int getNumberOfCylinders() {

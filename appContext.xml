@@ -24,9 +24,9 @@
   <!-- Car Package -->
 
  
-     <context:component-scan base-package="car">
-         <context:include-filter type="annotation" expression="Annotations.AnotherRandomDemoAnnotation"/>       
-     </context:component-scan>
+<!--      <context:component-scan base-package="car"> -->
+<!--          <context:include-filter type="annotation" expression="Annotations.AnotherRandomDemoAnnotation"/>        -->
+<!--      </context:component-scan> -->
      
 
        
