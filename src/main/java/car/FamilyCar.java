@@ -1,8 +1,5 @@
 package car;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
 public class FamilyCar {
 
     private Tire frontLeft;
@@ -13,10 +10,7 @@ public class FamilyCar {
 
 	private Tire rearRight;
 	
-	
-//	We can do the autowiring here as well:
-//	@Autowired
-//	@Qualifier("fourCyl")
+
 	private Engine engineType;
     
 	
@@ -56,8 +50,6 @@ public class FamilyCar {
 		return engineType;
 	}
 	
-	@Autowired
-	@Qualifier("fourCyl")
 	public void setEngineType(Engine engineType) {
 	     System.out.println("Setting engine using injection");
 		this.engineType = engineType;

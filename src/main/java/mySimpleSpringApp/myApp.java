@@ -15,15 +15,13 @@ public class myApp {
 		
 		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		
-		//FourCylinderEngine fourCylinderEngine = appContext.getBean(FourCylinderEngine.class);
-		//System.out.println("myFour: " + fourCylinderEngine.getNumberOfCylinders());
+		FourCylinderEngine fourCylinderEngine = appContext.getBean(FourCylinderEngine.class);
+		System.out.println("myFour: " + fourCylinderEngine.getNumberOfCylinders());
 		
-		//SixCylinderEngine sixCylinderEngine = appContext.getBean(SixCylinderEngine.class);
-		//System.out.println("MySix: " + sixCylinderEngine.getNumberOfCylinders());
-		
-		FamilyCar familyCar = appContext.getBean(FamilyCar.class);
-		System.out.println(familyCar.getCarDescription());
-		
+		SixCylinderEngine sixCylinderEngine = appContext.getBean("sixCyl", SixCylinderEngine.class);
+		System.out.println("MySix: " + sixCylinderEngine.getNumberOfCylinders());
+
+
 		((AnnotationConfigApplicationContext)appContext).close();
 		
 	}
