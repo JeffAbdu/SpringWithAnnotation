@@ -23,12 +23,8 @@ public class AppConfig {
 	@Bean(name="familyCar")
 	public FamilyCar getFamilyCar(){
 		
-		// Create instance:
-		FamilyCar familyCar = new FamilyCar();
-		
-		// Injection using Engine Type bean: 
-		familyCar.setEngineType(getFourCyl());
-		
+		// Create instance with constructor injection :
+		FamilyCar familyCar = new FamilyCar(getFourCyl());
 		//Return instance:
 		return familyCar;
 	}

@@ -14,6 +14,15 @@ public class FamilyCar {
 	
 	private Engine engineType;
     
+	
+    public FamilyCar(){
+       // default constructor	
+    } 	
+	
+	public FamilyCar(Engine engineType) {
+		this.engineType = engineType;
+	}
+	
 	public Tire getFrontLeft() {
 		return frontLeft;
 	}
