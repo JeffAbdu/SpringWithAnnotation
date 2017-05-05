@@ -3,6 +3,7 @@ package myTestPackage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import car.FamilyCar;
 import car.FourCylinderEngine;
 import car.SixCylinderEngine;
 
@@ -19,5 +20,20 @@ public class AppConfig {
 		return new SixCylinderEngine();
 	}
 
+	@Bean(name="familyCar")
+	public FamilyCar getFamilyCar(){
+		
+		// Create instance:
+		FamilyCar familyCar = new FamilyCar();
+		
+		// Injection using Engine Type bean: 
+		familyCar.setEngineType(getFourCyl());
+		
+		//Return instance:
+		return familyCar;
+	}
+	
+	
+	
 }
 

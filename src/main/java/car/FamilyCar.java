@@ -1,10 +1,7 @@
 package car;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 
 
-@Named
 public class FamilyCar {
 
     private Tire frontLeft;
@@ -15,8 +12,6 @@ public class FamilyCar {
 
 	private Tire rearRight;
 	
-	@Inject
-	@Named("sixCyl")
 	private Engine engineType;
     
 	public Tire getFrontLeft() {
