@@ -1,26 +1,31 @@
 package food;
 
 
-//- Within the file appContext.xml add the following annotation: 
-//    <context:annotation-config/>
-//    -> with this class, we can set up annotations within our java classe [Meal.java] to do autowiring [to use the factory pattern to create objects for reference variables]:
-//           -> By adding @Autowired on the top of the reference variables.
-//           -> or by adding @Autowired on the top of the setters of the reference variables.
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
-
+@Component
 public class Meal {
 	
-	@Autowired(required=false)     // In case the is no bean of the type "Fruit" within config xml file, then Spring will ignore it and avoid error message.   
+	@Value("#{myDemoFruit}")
 	private Fruit fruit;
-	@Autowired
+	
+	@Value("#{myDemoFruit.name}")
+	private String fruitName;
+	
+	
+	public String getFruitName() {
+		return fruitName;
+	}
+
+	public void setFruitName(String fruitName) {
+		this.fruitName = fruitName;
+	}
+
+
 	private Dairy dairy;
-	@Autowired
 	private Grain grain;
-	@Autowired
 	private Meat meat;
-	@Autowired
 	private Vegetable veg;
 		
 	
@@ -65,7 +70,7 @@ public class Meal {
 		
 		String answer = "This meal contains:";
 		 
-		if(fruit != null) answer += "some fruit: "; 
+		if(fruit != null) answer += "This meal has some fruit( " + fruit.getName() + ")\n"; 
 		if(dairy != null) answer += "some dairy: ";
 		if(grain	 != null) answer += "some grain: ";
 		if(meat != null) answer += "some meat: ";
