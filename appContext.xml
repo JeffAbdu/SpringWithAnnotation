@@ -9,7 +9,7 @@
   <!-- Food Package -->
          
      <bean id="fruit" class="food.Fruit">
-        <property name="name" value="Granny Smith Apple" />
+        <property name="name" value="#{'Granny Smith' +  ' Apple'}" />
      </bean> 
 
      <bean id="demoDataSource" class="food.DataSource"/>
