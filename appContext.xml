@@ -10,6 +10,7 @@
          
      <bean id="fruit" class="food.Fruit">
         <property name="name" value="#{T(food.DataSource).getAppleTypeStatic() +  ' Apple'}" />
+        <property name="nutritionalRating" value="#{T(java.lang.Math).random() * 10}"/>
      </bean> 
 
      <bean id="demoDataSource" class="food.DataSource"/>
