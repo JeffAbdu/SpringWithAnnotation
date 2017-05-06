@@ -5,6 +5,26 @@ import javax.annotation.*;
 
 public class Fruit {
 
+	private String name;
+	private int nutritionalRating;
+		
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getNutritionalRating() {
+		return nutritionalRating;
+	}
+
+	public void setNutritionalRating(int nutritionalRating) {
+		this.nutritionalRating = nutritionalRating;
+	}
+
+	
 	public Fruit(){}
 	
 	public String description="Not set";
@@ -18,7 +38,10 @@ public class Fruit {
 	}
 	
 	public String talkAboutYourself(){
-		return description;	
+        String about = "Hi I am fruit. I come from plants or trees with seeds\n";
+        if(this.name != null) about += "My name is " + name + "\n";
+        if(this.nutritionalRating > 0) about += "My nutritional Rating is " + nutritionalRating; 
+		return about;	
 	}
 	
 	//@PostConstruct

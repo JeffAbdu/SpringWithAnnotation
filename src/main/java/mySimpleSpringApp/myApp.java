@@ -2,27 +2,25 @@ package mySimpleSpringApp;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import car.FamilyCar;
 import car.FourCylinderEngine;
 import car.SixCylinderEngine;
-
+import food.Fruit;
 import myTestPackage.AppConfig;
 
 public class myApp {
 
 	public static void main(String[] args) {
 		
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 		
-		FourCylinderEngine fourCylinderEngine = appContext.getBean(FourCylinderEngine.class);
-		System.out.println("myFour: " + fourCylinderEngine.getNumberOfCylinders());
-		
-		SixCylinderEngine sixCylinderEngine = appContext.getBean("sixCyl", SixCylinderEngine.class);
-		System.out.println("MySix: " + sixCylinderEngine.getNumberOfCylinders());
+        Fruit myFruit = appContext.getBean("fruit", Fruit.class);
+        
+        System.out.println(myFruit.talkAboutYourself());
 
-
-		((AnnotationConfigApplicationContext)appContext).close();
+		//((FileSystemXmlApplicationContext)appContext).close();
 		
 	}
 

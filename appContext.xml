@@ -5,29 +5,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-     <context:annotation-config/>
 
   <!-- Food Package -->
          
-     <bean id="fruit" scope="singleton" class="food.Fruit">
-        <property name="description" value="I am a fruit"/>
+     <bean id="fruit" class="food.Fruit">
+        <property name="name" value="Granny Smith Apple" />
      </bean> 
 
-           
-     <bean id="vegetable" class="food.Vegetable"></bean>
-     <bean id="dairy" class="food.Dairy"></bean>
-     <bean id="meat" class="food.Meat"></bean>
-     <bean id="grain" class="food.Grain"></bean>
-     
-     <bean id="mealByAnnotation" class="food.Meal"></bean>
+     <bean id="demoDataSource" class="food.DataSource"/>
 
-  <!-- Car Package -->
-
- 
-<!--      <context:component-scan base-package="car"> -->
-<!--          <context:include-filter type="annotation" expression="Annotations.AnotherRandomDemoAnnotation"/>        -->
-<!--      </context:component-scan> -->
-     
 
        
 </beans>
