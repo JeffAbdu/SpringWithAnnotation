@@ -1,14 +1,8 @@
 package mySimpleSpringApp;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-import car.FamilyCar;
-import car.FourCylinderEngine;
-import car.SixCylinderEngine;
 import food.Fruit;
-import myTestPackage.AppConfig;
 
 public class myApp {
 
@@ -20,7 +14,7 @@ public class myApp {
         
         System.out.println(myFruit.talkAboutYourself());
 
-		//((FileSystemXmlApplicationContext)appContext).close();
+		((FileSystemXmlApplicationContext)appContext).close();
 		
 	}
 

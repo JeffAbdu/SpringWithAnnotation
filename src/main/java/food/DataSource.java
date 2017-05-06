@@ -3,6 +3,9 @@ package food;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+
+@Component("demoDataSource")
 public class DataSource {
 	
 	public String appleDescription = "Hi, I am an apple description";
