@@ -9,7 +9,7 @@
   <!-- Food Package -->
          
      <bean id="fruit" class="food.Fruit">
-        <property name="name" value="#{demoDataSource.getAppleType() +  ' Apple'}" />
+        <property name="name" value="#{T(food.DataSource).getAppleTypeStatic() +  ' Apple'}" />
      </bean> 
 
      <bean id="demoDataSource" class="food.DataSource"/>
