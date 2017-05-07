@@ -8,6 +8,14 @@
 
         <context:component-scan base-package="food" />
 
+       <bean id="winScript" class="script.WinScript" />
+       <bean id="unixScript" class="script.UnixScript" /> 
+       
+       <bean id="sL" class="script.ScriptLoaderDemoClass">
+          <property name="script" value="#{systemProperties['os.name'] matches 'Windows 10' ? winScript : unixScript}" />
+       </bean>
+       
+       
        
 </beans>
   

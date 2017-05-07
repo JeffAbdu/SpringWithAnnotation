@@ -2,8 +2,7 @@ package mySimpleSpringApp;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-import food.Fruit;
+import script.ScriptLoaderDemoClass;
 
 public class myApp {
 
@@ -11,10 +10,10 @@ public class myApp {
 		
 		ApplicationContext appContext = new FileSystemXmlApplicationContext("appContext.xml");
 		
-		Fruit myFruit = appContext.getBean("fruit", Fruit.class);
+		ScriptLoaderDemoClass sl = appContext.getBean("sL", ScriptLoaderDemoClass.class);
 		
-		System.out.println(myFruit.talkAboutYourself());
-		
+		sl.loadScript();
+			
 		((FileSystemXmlApplicationContext)appContext).close();
 		
 	}
