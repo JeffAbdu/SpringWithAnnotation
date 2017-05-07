@@ -39,7 +39,7 @@ public class DataSource {
 		 
 		 int index = new Random().nextInt(types.size());
 	     String type = types.get(index);
-	     return type;
+	     return null;
 		
 	}
 	

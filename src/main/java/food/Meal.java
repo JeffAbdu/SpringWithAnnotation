@@ -1,16 +1,12 @@
 package food;
 
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Meal {
 	
-	@Value("#{myDemoFruit}")
 	private Fruit fruit;
 	
-	@Value("#{myDemoFruit.name}")
+
 	private String fruitName;
 	
 	

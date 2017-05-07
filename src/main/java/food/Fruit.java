@@ -1,6 +1,10 @@
 package food;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component("fruit")
 public class Fruit {
 
 	private String name;
@@ -9,8 +13,9 @@ public class Fruit {
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
+ 
+	@Autowired 
+	public void setName(@Value("#{demoDataSource.getAppleType()?.toUpperCase() + ' APPLE'}") String name) {
 		this.name = name;
 	}
 
@@ -18,7 +23,8 @@ public class Fruit {
 		return nutritionalRating;
 	}
 
-	public void setNutritionalRating(int nutritionalRating) {
+	@Autowired
+	public void setNutritionalRating(@Value("#{T(java.lang.Math).random() * 10}") int nutritionalRating) {
 		this.nutritionalRating = nutritionalRating;
 	}
 
